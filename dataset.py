@@ -3,7 +3,7 @@ import os, sys
 from xml.dom.minidom import parse
 import pickle
 
-from deptree import *
+from util.deptree import deptree
 
 class Dataset:
     ##  Parse all XML files in given dir, and load a list of sentences.
@@ -77,7 +77,7 @@ class Dataset:
 
     ## ---- iterator to get sentences in the data set
     def save(self, filename) :
-        with open(filename+".pck", "wb") as pf:
+        with open(filename+".pck", "wb", encoding='utf-16') as pf:
             pickle.dump(self.data, pf)
 
                         

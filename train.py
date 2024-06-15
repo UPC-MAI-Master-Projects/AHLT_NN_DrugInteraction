@@ -17,6 +17,8 @@ from network import ddiCNN, criterion
 random.seed(12345)
 torch.manual_seed(121212)
 
+
+
 #----------------------------------------------
 def train(epoch):
     # set network in learn mode
@@ -101,7 +103,7 @@ validationfile = sys.argv[2]
 # number of training epochs
 n_epochs = int(sys.argv[3])
 # name under which the learned model will be saved
-modelname = sys.argv[4]
+modelname = sys.argv[4] 
 
 # load train and validation data
 traindata = Dataset(trainfile)
@@ -134,4 +136,3 @@ for epoch in range(n_epochs):
 os.makedirs(modelname,exist_ok=True)
 torch.save(network, modelname+"/network.nn")
 codes.save(modelname+"/codemaps")
-
